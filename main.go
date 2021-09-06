@@ -45,8 +45,10 @@ func albumsByArtist(name string) ([]Album, error) {
 func main() {
 	// Capture connection properties.
 	cfg := mysql.Config{
-		User:   os.Getenv("DBUSER"), // export DBUSER=<user>
+		User: os.Getenv("DBUSER"), // export DBUSER=<user>
+		// for example: newuser
 		Passwd: os.Getenv("DBPASS"), // export DBPASS=<password>
+		// for example: password
 		Net:    "tcp",
 		Addr:   "127.0.0.1:3306",
 		DBName: "recordings",
